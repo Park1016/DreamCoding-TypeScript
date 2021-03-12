@@ -1,17 +1,21 @@
 /**
  * Let's make a calculator 🧮
  */
-function calculate(str:string, a:number, b:number):number {
-    if(str === 'add'){
-        return a + b;
-    }else if(str === 'substract'){
-        return a - b;
-    }else if(str === 'multiply'){
-        return a * b;
-    }else if(str === 'divide'){
-        return a / b;
-    }else if(str === 'remainder'){
-        return a % b;
+
+type Command = 'add' | 'substract' | 'multiply' | 'divide' | 'remainder';
+
+function calculate(command:Command, a:number, b:number):number {
+    switch(command) {
+        case 'add':
+            return a + b;
+        case 'substract':
+            return a - b;
+        case 'multiply':
+            return a * b;
+        case 'divide':
+            return a / b;
+        case 'remainder':
+            return a % b;
     }
 }
 
