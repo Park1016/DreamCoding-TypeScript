@@ -19,7 +19,7 @@
   };
 
   type ResourceLoadState = LoadingState | SuccessState | FailState;
-3
+
   function printLoginState(resource:ResourceLoadState) {
     switch (resource.state) {
       case 'loading':
