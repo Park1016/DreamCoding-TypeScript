@@ -1,4 +1,5 @@
-﻿const beans:number = 1;
+﻿{
+const beans:number = 1;
 
 function makeCoffee(shot:number):string{
     const coffee = beans * shot;
@@ -18,3 +19,4 @@ console.log(makeCoffee(1));
 console.log(makeCoffee(2));
 console.log(makeCoffee(3));
 console.log(makeCoffee(4));
+}
