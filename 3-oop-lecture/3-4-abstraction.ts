@@ -58,8 +58,11 @@
     }
 
     makeCoffee(shots: number): CoffeeCup {
+      // 커피콩 갈기(원하는 shot만큼)
       this.grindBeans(shots);
+      // 커피 기계 데우기
       this.preheat();
+      // 커피 추출(원하는 shot만큼)
       return this.extract(shots);
     }
   }
