@@ -22,7 +22,11 @@
         throw new Error('Stack is full!');
       }
       const node: StackNode = { value, next: this.head };
+      console.log(node);
+      console.log('******************');
       this.head = node;
+      console.log(this.head);
+      console.log('------------------');
       this._size++;
     }
     pop(): string {
@@ -44,5 +48,5 @@
     console.log(stack.pop());
   }
   
-  stack.pop();
+  //stack.pop();
   
