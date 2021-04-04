@@ -5,10 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script defer src="./build/main.js"></script>
     <title>motion</title>
 </head>
 <body>
-    
+    <section class="section1">
+        <header>MOTION</header>
+        <div class="buttons">
+            <button class="headBtn imgBtn">IMAGE</button>
+            <button class="headBtn videoBtn">VIDEO</button>
+            <button class="headBtn noteBtn">NOTE</button>
+            <button class="headBtn taskBtn">TASK</button>
+        </div>
+    </section>
+    <section class="section2">
+        <div class="NoteTask">
+            <i class="fas fa-times"></i>
+            <div class="textArea">
+                <label for="title">Title</label>
+                <input name="title" class="input" id="title" type="text">
+                <label for="body">Body</label>
+                <textarea name="body" class="input" id="body" type="text" required wrap="hard"></textarea>
+            </div>
+            <button class="addBtn">ADD</button>
+        </div>
+        <!-- <div class="ImageVideo">
+            <i class="fas fa-times"></i>
+            <div class="textArea">
+                <label for="title">Title</label>
+                <input name="title" class="input" id="title" type="text">
+                <label for="body">Url</label>
+                <input name="body" class="input" id="body" type="text">
+            </div>
+            <button class="addBtn">ADD</button> -->
+        </div>
+    </section>
+    <footer>
+        <span class="footer">
+            &copy; Copyright by DreamCoding Academy All rights reserved    
+        </span>
+    </footer>
 </body>
 </html>

@@ -1,1 +1,158 @@
-﻿
+﻿* {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+html {
+  background-image: url("img/cool-background.png");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  width: 50%;
+  height: 100vh;
+}
+
+.section1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20vh;
+  background-color: black;
+  caret-color: transparent;
+}
+
+header {
+  color: #d52b2b;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.buttons {
+  margin-top: 0.5rem;
+}
+
+.headBtn {
+  background-color: #f73c31;
+  color: #ffeee6;
+  font-size: 0.5rem;
+  font-weight: bold;
+  width: 5rem;
+  height: 1.5rem;
+  /* border-radius: 10px; */
+}
+
+.section2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 75vh;
+  background-color: #1b191b;
+}
+
+.NoteTask {
+  position: relative;
+  background: rgb(48, 47, 48);
+  background: linear-gradient(
+    90deg,
+    rgba(48, 47, 48, 1) 0%,
+    rgba(73, 72, 73, 1) 50%,
+    rgba(48, 47, 48, 1) 100%
+  );
+  width: 60%;
+  height: 40%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.fa-times {
+  margin-right: 0.5rem;
+  color: #e73e38;
+  font-size: 0.5rem;
+  caret-color: transparent;
+}
+
+.fa-times:hover {
+  cursor: pointer;
+}
+
+.textArea {
+  position: relative;
+  /* display: block; */
+  width: 98%;
+  /* margin-right: 0.5rem; */
+  margin-left: 0.5rem;
+}
+
+label {
+  font-size: 0.7rem;
+  color: #e7d8b9;
+  caret-color: transparent;
+}
+
+input:focus {
+  outline: none;
+}
+
+.input {
+  display: block;
+  border-width: 0;
+  border: 0.1rem solid;
+  background-color: #4e4c4e;
+  border-top-color: #333233;
+  border-left-color: #333233;
+  border-right-color: #676567;
+  border-bottom-color: #676567;
+  margin: 0;
+  padding: 0;
+  width: 95%;
+  outline: none;
+}
+
+#title {
+  height: 1rem;
+}
+
+#body {
+  height: 1.8rem;
+  word-break: break-all;
+}
+
+.addBtn {
+  margin-right: 0.5rem;
+  background-color: #e73e38;
+  width: 2.5rem;
+  height: 1rem;
+  font-size: 0.5rem;
+  font-weight: bold;
+  color: #ffeee6;
+  margin-top: 0.5rem;
+  box-shadow: 1px 1px 3px black;
+}
+
+footer {
+  display: inline-block;
+  line-height: 6vh;
+  background-color: black;
+  text-align: center;
+  font-size: 0.5rem;
+  color: #ffeee6;
+  width: 100%;
+  height: 5vh;
+  caret-color: transparent;
+}
