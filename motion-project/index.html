@@ -12,7 +12,7 @@
 <body>
     <section class="section1">
         <header>MOTION</header>
-        <div class="buttons">
+        <div class="headButtons">
             <button class="headBtn imgBtn">IMAGE</button>
             <button class="headBtn videoBtn">VIDEO</button>
             <button class="headBtn noteBtn">NOTE</button>
@@ -20,26 +20,27 @@
         </div>
     </section>
     <section class="section2">
-        <div class="NoteTask">
+        <div class="imageVideo modal">
             <i class="fas fa-times"></i>
             <div class="textArea">
-                <label for="title">Title</label>
-                <input name="title" class="input" id="title" type="text">
+                <label for="imageVideotitle">Title</label>
+                <input name="imageVideotitle" class="input" id="imageVideotitle" type="text">
+                <label for="url">Url</label>
+                <input name="url" class="input" id="url" type="text">
+            </div>
+            <button class="addBtn">ADD</button>
+        </div>
+        <div class="noteTask modal">
+            <i class="fas fa-times"></i>
+            <div class="textArea">
+                <label for="noteTasktitle">Title</label>
+                <input name="noteTasktitle" class="input" id="noteTasktitle" type="text">
                 <label for="body">Body</label>
                 <textarea name="body" class="input" id="body" type="text" required wrap="hard"></textarea>
             </div>
             <button class="addBtn">ADD</button>
         </div>
-        <!-- <div class="ImageVideo">
-            <i class="fas fa-times"></i>
-            <div class="textArea">
-                <label for="title">Title</label>
-                <input name="title" class="input" id="title" type="text">
-                <label for="body">Url</label>
-                <input name="body" class="input" id="body" type="text">
-            </div>
-            <button class="addBtn">ADD</button> -->
-        </div>
+        <div class="contents"></div>
     </section>
     <footer>
         <span class="footer">

@@ -39,7 +39,7 @@ header {
   font-weight: bold;
 }
 
-.buttons {
+.headButtons {
   margin-top: 0.5rem;
 }
 
@@ -48,7 +48,7 @@ header {
   color: #ffeee6;
   font-size: 0.5rem;
   font-weight: bold;
-  width: 5rem;
+  width: 4rem;
   height: 1.5rem;
   /* border-radius: 10px; */
 }
@@ -62,8 +62,9 @@ header {
   background-color: #1b191b;
 }
 
-.NoteTask {
-  position: relative;
+.noteTask,
+.imageVideo {
+  position: absolute;
   background: rgb(48, 47, 48);
   background: linear-gradient(
     90deg,
@@ -71,13 +72,14 @@ header {
     rgba(73, 72, 73, 1) 50%,
     rgba(48, 47, 48, 1) 100%
   );
-  width: 60%;
-  height: 40%;
+  width: 30%;
+  height: 30%;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
+  visibility: hidden;
 }
 
 .fa-times {
@@ -124,7 +126,9 @@ input:focus {
   outline: none;
 }
 
-#title {
+#noteTasktitle,
+#imageVideotitle,
+#url {
   height: 1rem;
 }
 
@@ -141,8 +145,27 @@ input:focus {
   font-size: 0.5rem;
   font-weight: bold;
   color: #ffeee6;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
   box-shadow: 1px 1px 3px black;
+}
+
+.contents {
+  position: absolute;
+  width: 50%;
+  height: 75vh;
+  /* background-color: white; */
+}
+
+.content {
+  width: 45%;
+  height: 20%;
+  background: rgb(48, 47, 48);
+  background: linear-gradient(
+    90deg,
+    rgba(48, 47, 48, 1) 0%,
+    rgba(73, 72, 73, 1) 50%,
+    rgba(48, 47, 48, 1) 100%
+  );
 }
 
 footer {
