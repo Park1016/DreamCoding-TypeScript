@@ -8,32 +8,53 @@ const noteBtn = document.querySelector('.noteBtn');
 const taskBtn = document.querySelector('.taskBtn');
 const section2 = document.querySelector('.section2');
 const modal = document.querySelector('.modal');
-const imageVideo = document.querySelector('.imageVideo');
-const noteTask = document.querySelector('.noteTask');
+// const imageVideo = document.querySelectorAll('.imageVideo');
+// const noteTask = document.querySelectorAll('.noteTask');
+const imageModal = document.querySelector('.imageModal');
+const videoModal = document.querySelector('.videoModal');
+const noteModal = document.querySelector('.noteModal');
+const taskModal = document.querySelector('.taskModal');
 const imageVideoTextArea = document.querySelector('.imageVideoTextArea');
 const noteTaskTextArea = document.querySelector('.noteTaskTextArea');
-const ivTitleInput = document.querySelector('.ivTitleInput');
-const ivUrlInput = document.querySelector('.ivUrlInput');
-const ntTitleInput = document.querySelector('.ntTitleInput');
-const ntBodyInput = document.querySelector('.ntBodyInput');
+const imageTitleInput = document.querySelector('.imageTitleInput');
+const videoTitleInput = document.querySelector('.videoTitleInput');
+const imageUrlInput = document.querySelector('.imageUrlInput');
+const videoUrlInput = document.querySelector('.videoUrlInput');
+const noteTitleInput = document.querySelector('.noteTitleInput');
+const taskTitleInput = document.querySelector('.taskTitleInput');
+const noteBodyInput = document.querySelector('.noteBodyInput');
+const taskBodyInput = document.querySelector('.taskBodyInput');
 const addBtn = document.querySelector('.addBtn');
 const undo = document.querySelector('.fa-times');
 const contents = document.querySelector('.contents');
 
 // function
 function onImgBtn(){
-    noteTask.style.visibility='hidden';
-    imageVideo.style.visibility='visible';
+    noteModal.style.visibility='hidden';
+    taskModal.style.visibility='hidden';
+    videoModal.style.visibility='hidden';
+    imageModal.style.visibility='visible';
 }
 
 function onVideoBtn(){
-    noteTask.style.visibility='hidden';
-    imageVideo.style.visibility='visible';
+    noteModal.style.visibility='hidden';
+    taskModal.style.visibility='hidden';
+    videoModal.style.visibility='visible';
+    imageModal.style.visibility='hidden';
 }
 
 function onNoteBtn(){
-    imageVideo.style.visibility='hidden';
-    noteTask.style.visibility='visible';
+    noteModal.style.visibility='visible';
+    taskModal.style.visibility='hidden';
+    videoModal.style.visibility='hidden';
+    imageModal.style.visibility='hidden';
+}
+
+function onTaskBtn(){
+    noteModal.style.visibility='hidden';
+    taskModal.style.visibility='visible';
+    videoModal.style.visibility='hidden';
+    imageModal.style.visibility='hidden';
 }
 
 function onUndo(e){
@@ -41,36 +62,108 @@ function onUndo(e){
     target.parentNode.style.visibility='hidden';
 }
 
-function onImageVideo(){
+function onImageModal(){
     const ivClass =
     `
     <li class="content">
-    <span class="ivContentBody">
-    <img class="image"
-     src='${ivUrlInput.value}'>
-    </span>
-    <span class="ivContentText contentText">${ivTitleInput.value}</span>
-    <span class="ivContentUndo contentUndo">
-        <i class="fas fa-times"></i>
-    </span>
+        <div class="ivContentBody">
+            <img class="image"
+            src='${imageUrlInput.value}'>
+        </div>
+        <div class="ivContentText contentText">${imageTitleInput.value}</div>
+        <div class="ivContentUndo contentUndo">
+            <i class="fas fa-times"></i>
+        </div>
     </li>
     ` ;
-    console.log(ivUrlInput.value);
+
     contents.insertAdjacentHTML('beforeend', ivClass);
+    imageUrlInput.value='';
+    imageTitleInput.value='';
 }
 
-function onNoteTask(){
-    const ntClass =
+function onVideoModal(){
+    const start = videoUrlInput.value.indexOf('e');
+    const address = videoUrlInput.value.substring(start+2);
+    const addressClass =
     `
     <li class="content">
-    <span class="ntContentBody"></span>
-    <span class="ntContentText contentText">${ntTitleInput.value}</span>
-    <span class="ntContentUndo contentUndo">
-        <i class="fas fa-times"></i>
-    </span>
+        <div class="ivContentBody">
+            <iframe width="100%" height="100%" 
+            src="https://www.youtube.com/embed/${address}"
+            title="YouTube video player" frameborder="0" allow="accelerometer;
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="ivContentText contentText">${videoTitleInput.value}</div>
+        <div class="ivContentUndo contentUndo">
+            <i class="fas fa-times"></i>
+        </div>
+    </li>
+    ` ;
+    const embedClass = 
+    `
+    <li class="content">
+        <div class="ivContentBody">
+            <iframe width="100%" height="100%" 
+            src="${videoUrlInput.value}"
+            title="YouTube video player" frameborder="0" allow="accelerometer;
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="ivContentText contentText">${videoTitleInput.value}</div>
+        <div class="ivContentUndo contentUndo">
+            <i class="fas fa-times"></i>
+        </div>
+    </li>
+    ` ;
+    if(videoUrlInput.value.indexOf('embed') != -1){
+        contents.insertAdjacentHTML('beforeend', embedClass);
+    }else{
+        contents.insertAdjacentHTML('beforeend', addressClass);
+    }
+    videoUrlInput.value='';
+    videoTitleInput.value='';
+}
+
+function onNoteModal(){
+    const ntClass =
+    `
+    <li class="content" id="ntContent">
+        <div class="bodyTextContent">    
+            <div class="ntContentBody">${noteTitleInput.value}</div>
+            <div class="ntContentText contentText">${noteBodyInput.value}</div>
+        </div>
+        <div class="ntContentUndo contentUndo">
+            <i class="fas fa-times"></i>
+        </div>
     </li>
     ` ;
     contents.insertAdjacentHTML('beforeend', ntClass);
+    noteTitleInput.value = '';
+    noteBodyInput.value='';
+}
+
+function onTaskModal(){
+    const ntClass =
+    `
+    <li class="content" id="ntContent">
+        <div class="bodyTextContent">            
+            <div class="ntContentBody">${taskTitleInput.value}</div>
+            <div class="ntContentText contentText">
+                <input type="checkbox" id="${taskBodyInput.value}"
+                name="${taskBodyInput.value}" checked>
+                <label for="scales">${taskBodyInput.value}</label>               
+            </div>
+        </div>
+        <div class="ntContentUndo contentUndo">
+            <i class="fas fa-times"></i>
+        </div>
+    </li>
+    ` ;
+    contents.insertAdjacentHTML('beforeend', ntClass);  
+    taskTitleInput.value = '';  
+    taskBodyInput.value = '';
 }
 
 function onContentUndo(e){
@@ -79,20 +172,26 @@ function onContentUndo(e){
 }
 
 function onAddBtn(e){
-    const target = e.target;
-    if(target.parentNode.classList.contains('imageVideo')){
-        onImageVideo();
-    }else{
-        onNoteTask();
+    const target = e.target.parentNode;
+    switch(target){
+        case imageModal:
+            onImageModal();
+            break;
+        case videoModal:
+            onVideoModal();
+            break;
+        case noteModal:
+            onNoteModal();
+            break;
+        case taskModal:
+            onTaskModal();
+            break;
+        default:
+            throw new Error('unknown modal');
     }
 }
 
 // addEventListener
-function onTaskBtn(){
-    imageVideo.style.visibility='hidden';
-    noteTask.style.visibility='visible';
-}
-
 headButtons.addEventListener('click',(e)=>{
     const target = e.target;
     switch(target){
@@ -127,6 +226,7 @@ section2.addEventListener('click', (e)=>{
     }
     if(target.classList.contains('addBtn')){
         onAddBtn(e);
+        e.target.parentNode.style.visibility = 'hidden';
     }
 });
 

@@ -66,8 +66,7 @@ header {
   background-color: rgb(255, 255, 255, 0.1);
 }
 
-.noteTask,
-.imageVideo {
+.modal {
   position: absolute;
   background: rgb(48, 47, 48);
   background: linear-gradient(
@@ -129,13 +128,17 @@ input:focus {
   outline: none;
 }
 
-#noteTasktitle,
-#imageVideotitle,
-#url {
+#noteTitle,
+#taskTitle,
+#imageTitle,
+#videoTitle,
+#imageUrl,
+#videoUrl {
   height: 1rem;
 }
 
-#body {
+#noteBody,
+#taskBody {
   height: 1.8rem;
   word-break: break-all;
 }
@@ -165,6 +168,11 @@ input:focus {
   z-index: 1;
 }
 
+#ntContent {
+  width: 90%;
+  height: 20%;
+}
+
 .content {
   position: relative;
   width: 90%;
@@ -179,6 +187,7 @@ input:focus {
   margin-top: 0.5rem;
   box-shadow: 1px 1px 1px black;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   z-index: 2;
@@ -186,6 +195,7 @@ input:focus {
 
 .image {
   position: absolute;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -199,24 +209,58 @@ input:focus {
 .ivContentText {
   width: 20%;
   height: 100%;
-  margin: 1rem 0.25rem 0rem 0.25rem;
+  padding: 1rem 0.25rem;
   color: #ead2a3;
-  font-weight: bold;
   font-size: 0.5rem;
   text-align: left;
   height: 100%;
-  display: table-cell;
-  vertical-align: top;
   position: relative;
 }
 
 .ivContentUndo {
   width: 20%;
-  height: 100%;
-  margin: 0rem 0.25rem 0rem 0.25rem;
+  margin: 0rem 0.25rem;
   text-align: end;
   position: relative;
 }
+
+.bodyTextContent {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+}
+
+.ntContentBody {
+  height: 50%;
+  display: flex;
+  align-items: flex-end;
+  color: #ead2a3;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin: 0 0.3rem;
+}
+
+.ntContentText {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  color: #aaa9aa;
+  font-size: 0.5rem;
+  margin: 0 0.3rem;
+}
+
+.ntContentUndo {
+  width: 20%;
+  margin: 0 0.25rem;
+  text-align: end;
+  position: relative;
+}
+
+/* .ivContentUndo > .fa-times {
+  display: table-cell;
+  vertical-align: middle;
+} */
 
 footer {
   display: inline-block;

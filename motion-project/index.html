@@ -20,23 +20,43 @@
         </div>
     </section>
     <section class="section2">
-        <div class="imageVideo modal">
+        <div class="imageModal modal">
             <i class="fas fa-times"></i>
             <div class="imageVideoTextArea textArea">
                 <label for="imageVideotitle">Title</label>
-                <input name="imageVideotitle" class="ivTitleInput input" id="imageVideotitle" type="text">
+                <input name="imageVideotitle" class="imageTitleInput input" id="imageTitle" type="text">
                 <label for="url">Url</label>
-                <input name="url" class="ivUrlInput input" id="url" type="text">
+                <input name="url" class="imageUrlInput input" id="imageUrl" type="text">
             </div>
             <button class="addBtn">ADD</button>
         </div>
-        <div class="noteTask modal">
+        <div class="videoModal modal">
+            <i class="fas fa-times"></i>
+            <div class="imageVideoTextArea textArea">
+                <label for="imageVideotitle">Title</label>
+                <input name="imageVideotitle" class="videoTitleInput input" id="videoTitle" type="text">
+                <label for="url">Url</label>
+                <input name="url" class="videoUrlInput input" id="videoUrl" type="text">
+            </div>
+            <button class="addBtn">ADD</button>
+        </div>
+        <div class="noteModal modal">
             <i class="fas fa-times"></i>
             <div class="noteTaskTextArea textArea">
                 <label for="noteTasktitle">Title</label>
-                <input name="noteTasktitle" class="ntTitleInput input" id="noteTasktitle" type="text">
+                <input name="noteTasktitle" class="noteTitleInput input" id="noteTitle" type="text">
                 <label for="body">Body</label>
-                <textarea name="body" class="ntBodyInput input" id="body" type="text" required wrap="hard"></textarea>
+                <textarea name="body" class="noteBodyInput input" id="noteBody" type="text" required wrap="hard"></textarea>
+            </div>
+            <button class="addBtn">ADD</button>
+        </div>
+        <div class="taskModal modal">
+            <i class="fas fa-times"></i>
+            <div class="noteTaskTextArea textArea">
+                <label for="noteTasktitle">Title</label>
+                <input name="noteTasktitle" class="taskTitleInput input" id="taskTitle" type="text">
+                <label for="body">Body</label>
+                <textarea name="body" class="taskBodyInput input" id="taskBody" type="text" required wrap="hard"></textarea>
             </div>
             <button class="addBtn">ADD</button>
         </div>
