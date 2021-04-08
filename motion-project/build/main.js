@@ -8,8 +8,6 @@ const noteBtn = document.querySelector('.noteBtn');
 const taskBtn = document.querySelector('.taskBtn');
 const section2 = document.querySelector('.section2');
 const modal = document.querySelector('.modal');
-// const imageVideo = document.querySelectorAll('.imageVideo');
-// const noteTask = document.querySelectorAll('.noteTask');
 const imageModal = document.querySelector('.imageModal');
 const videoModal = document.querySelector('.videoModal');
 const noteModal = document.querySelector('.noteModal');
@@ -27,6 +25,11 @@ const taskBodyInput = document.querySelector('.taskBodyInput');
 const addBtn = document.querySelector('.addBtn');
 const undo = document.querySelector('.fa-times');
 const contents = document.querySelector('.contents');
+
+
+new Sortable(contents, {
+    animation: 350
+});
 
 // function
 function onImgBtn(){
